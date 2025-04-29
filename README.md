@@ -49,30 +49,6 @@ This project demonstrates a scalable, end-to-end **real-time sentiment analysis 
 [Power BI Dashboard from DynamoDB or JSON]
 ```
 
----
-
-## 📂 Project Structure
-
-```
-aws-sentiment-pipeline/
-├── scripts/
-│   ├── review_producer.py             # EC2 review generator
-│   ├── lambda_to_s3.py                # Lambda function for Kinesis → S3
-│   ├── sentiment_analysis.py          # EMR PySpark script
-│   └── upload_to_dynamodb.py          # Script to push to DynamoDB
-│
-├── sample_data/
-│   └── example_review_batch.json      # Sample JSON
-│
-├── architecture/
-│   └── aws_sentiment_pipeline.png     # Architecture diagram
-│
-├── requirements.txt                   # Python dependencies
-├── README.md                          # Project documentation
-└── LICENSE                            # (optional)
-```
-
----
 
 ## 📊 Sample Output (Processed Review)
 
@@ -83,26 +59,4 @@ aws-sentiment-pipeline/
   "sentiment": "Positive"
 }
 ```
-
----
-
-## 📊 Dashboard (Power BI)
-
-Visuals include:
-- Sentiment breakdown (Positive/Negative/Neutral)
-- Word cloud of review terms
-- Table view with filters by sentiment
-- Time trend (optional if timestamp is added)
-
----
-
-## 🔧 Setup & Deployment
-
-### 1. Run `review_producer.py` from EC2
-### 2. Deploy `lambda_to_s3.py` to AWS Lambda (trigger: Kinesis)
-### 3. Launch EMR cluster and submit `sentiment_analysis.py`
-### 4. Run `upload_to_dynamodb.py` to populate DynamoDB
-### 5. Connect Power BI to S3/JSON or DynamoDB to build dashboard
-
-
 
